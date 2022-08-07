@@ -1,0 +1,15 @@
+
+cd libdrm-2.4.112
+mkdir build && cd build
+
+meson setup \
+  --prefix /opt/libdrm \
+  --sbindir /opt/libdrm/bin \
+  --libexecdir /opt/libdrm/bin/libexec \
+  --sysconfdir /opt/libdrm/conf \
+  --backend ninja \
+  --buildtype release \
+  --default-library both
+
+ninja -j8
+ninja install
